@@ -29,13 +29,13 @@ void white_enable_can_transceivers(bool enabled) {
 void white_set_led(uint8_t color, bool enabled) {
   switch (color){
     case LED_RED:
-      set_gpio_output(GPIOC, 9, !enabled);
+      set_gpio_output(GPIOD, 9, !enabled);
       break;
      case LED_GREEN:
-      set_gpio_output(GPIOC, 7, !enabled);
+      set_gpio_output(GPIOA, 7, !enabled);
       break;
     case LED_BLUE:
-      set_gpio_output(GPIOC, 6, !enabled);
+      set_gpio_output(GPIOA, 6, !enabled);
       break;
     default:
       break;
@@ -111,8 +111,8 @@ void white_set_can_mode(uint8_t mode){
       set_gpio_alternate(GPIOB, 6, GPIO_AF9_CAN2);
 
       // A8,A15: normal CAN3 mode
-      set_gpio_alternate(GPIOA, 8, GPIO_AF11_CAN3);
-      set_gpio_alternate(GPIOA, 15, GPIO_AF11_CAN3);
+      set_gpio_alternate(GPIOA, 8, GPIO_AF9_CAN1);
+      set_gpio_alternate(GPIOA, 15, GPIO_AF9_CAN1);
       break;
     case CAN_MODE_GMLAN_CAN2:
       // B5,B6: disable CAN2 mode
