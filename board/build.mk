@@ -65,7 +65,7 @@ obj/$(STARTUP_FILE).o: $(STARTUP_FILE).s
 
 obj/$(PROJ_NAME).bin: obj/$(STARTUP_FILE).o obj/main.$(PROJ_NAME).o
   # hack
-	$(CC) -Wl,--section-start,.isr_vector=0x8004000 $(CFLAGS) -o obj/$(PROJ_NAME).elf $^
+	$(CC)  $(CFLAGS) -o obj/$(PROJ_NAME).elf $^
 	$(OBJCOPY) -v -O binary obj/$(PROJ_NAME).elf obj/code.bin
 	SETLEN=1 ../crypto/sign.py obj/code.bin $@ $(CERT)
 	@BINSIZE=$$(du -b "obj/$(PROJ_NAME).bin" | cut -f 1) ; \
