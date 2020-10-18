@@ -40,6 +40,8 @@ void detect_board_type(void) {
       hw_type = HW_TYPE_BLACK_PANDA;
       current_board = &board_black;
     }
+    hw_type = HW_TYPE_GREY_PANDA;
+    current_board = &board_grey;
   #else
     #ifdef PEDAL
       hw_type = HW_TYPE_PEDAL;
