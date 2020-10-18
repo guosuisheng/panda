@@ -767,7 +767,22 @@ void TIM1_BRK_TIM9_IRQ_Handler(void) {
 }
 
 #define MAX_FADE 8192U
+
+void myloop(void){
+while(1)
+{
+  GPIOA->ODR |= ~(1 << 6);
+  GPIOA->ODR |= ~(1 << 7);
+  delay(2000000);
+  GPIOA->ODR &= ~(1 << 6);
+  GPIOA->ODR &= ~(1 << 7);
+  delay(2000000);
+}
+}
 int main(void) {
+
+  //myloop();
+
   // Init interrupt table
   init_interrupts(true);
 
