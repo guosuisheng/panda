@@ -13,6 +13,8 @@ It is 2nd gen hardware, reusing code and parts from the [NEO](https://github.com
 ![panda tests](https://github.com/commaai/panda/workflows/tests/badge.svg)
 ![panda drivers](https://github.com/commaai/panda/workflows/drivers/badge.svg)
 
+<img src="https://stm32-base.org/assets/img/boards/STM32F407VET6_STM32_F4VE_V2.0-2.jpg">
+
 ## Usage
 
 ### Python
